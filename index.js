@@ -19,7 +19,7 @@ function donate()
   finalexchange = finalexchange.toFixed(8);
   var url = "bitcoin:"+ address +"?amount=" + finalexchange;
 console.log(finalexchange);
-document.getElementById("donatetext").innerHTML ="<br><br<br><a href='"+ url + "'> Please send " + finalexchange.toString() + " Bitcoin to " + address + "</a>";
+document.getElementById("donatetext").innerHTML ="<br><br><a href='"+ url + "'> Please send " + finalexchange.toString() + " Bitcoin to " + address + "</a>";
 
 if (popup == true){window.open(url);}
 }
