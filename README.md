@@ -1,5 +1,5 @@
 # donate-bitcoin
-######## Copyright (GPL) 2016  Nathan Robinson
+###### Copyright (GPL) 2016  Nathan Robinson
 A simple html plugin to allow people to donate the equivalent bitcoin amount of a donation of a chosen fiat currency.
 
 
