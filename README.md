@@ -1,6 +1,6 @@
 # Donate bitcoin
 
-A html plugin to allow people to donate bitcoin to a specified address.
+A simple html plugin to allow people to donate the equivalent bitcoin amount of a donation of a chosen fiat currency.
 
 
 Embed with:
