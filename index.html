@@ -8,13 +8,18 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
   </head>
-<script src="index.js">
-</script>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.qrcode.min.js"></script>
+<script src="index.js"></script>
+
 <center>
 <br>
 <input type="text" name="donatebox" id="donatebox">
 <input type="button" id="donatebutton" value="Donate" onclick='donate()'>
 <script>setCurrency();</script>
 <div id="donatetext"></div>
+<br>
+<div id="qrcode"></div>
 </center>
 <html>

@@ -3,6 +3,7 @@
 var address = "PUT_ADDRESS_HERE"; // The bitcoin address to receive donations. Change to yours
 var popup = false; // Set to true if you want a popup to pay bitcoin
 var currency_code = "USD"; // Change to your preferred currency. Choose from https://api.bitcoinaverage.com/ticker/
+var qrcode = false; // Set to true for qr code
 
 function httpGet(theUrl)
 {
@@ -23,6 +24,9 @@ function donate()
   var url = "bitcoin:"+ address +"?amount=" + finalexchange;
   document.getElementById("donatetext").innerHTML ="<br><a href='"+ url + "'> Please send " + finalexchange.toString() + " Bitcoin to " + address + "</a>";
 if (popup == true){window.open(url);}
+if (qrcode == true){
+  $('#qrcode').qrcode(url);
+}
 }
 
 function setCurrency()
