@@ -10,6 +10,6 @@ Embed with:
 
 Configuration: (inside of index.js)
 ```
-var address = "15EQPm5BFGbxkqjqAoZKhapwShTtzap9aj"; // The bitcoin address to receive donations. Change to yours
+var address = "PUT_ADDRESS_HERE"; // The bitcoin address to receive donations. Change to yours
 var popup = false; // Set to true if you want a popup to pay bitcoin
 ```
