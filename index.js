@@ -17,6 +17,7 @@ var currency = parseInt(document.getElementById("donatebox").value);
   var url = "bitcoin:"+ address +"?amount=" + finalexchange;
 if (link == true){document.getElementById("donatetext").innerHTML ="<br><a href='"+ url + "'> Please send " + finalexchange.toString() + " Bitcoin to " + address + "</a>";}
 if (popup == true){window.open(url);}
+if (qrcode == true){document.getElementById("qrcode").innerHTML = "";}
 if (qrcode == true){$('#qrcode').qrcode(url);}
 console.log(url);}
 
