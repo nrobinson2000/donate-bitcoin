@@ -10,7 +10,7 @@ Embed with:
 ```
 Or with qr code option:
 ```
-<iframe style="border:none;" src="index.html" height="450px" width="400px"></iframe>
+<iframe style="border:none;" src="donate-bitcoin/index.html" height="450px" width="400px"></iframe>
 ```
 
 Configuration: (inside of index.js)
