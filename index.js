@@ -3,7 +3,7 @@
 var address = "PUT_ADDRESS_HERE"; // The bitcoin address to receive donations. Change to yours
 var popup = false; // Set to true if you want a popup to pay bitcoin
 var currency_code = "USD"; // Change to your preferred currency. Choose from https://api.bitcoinaverage.com/ticker/
-var qrcode = true; // Set to true for qr code
+var qrcode = false; // Set to true for qr code
 var link = true; // Set to false to disable generating hyperlink
 
 function httpGet(theUrl){var xmlHttp = new XMLHttpRequest();xmlHttp.open( "GET", theUrl, false );xmlHttp.send( null );return xmlHttp.responseText;}
