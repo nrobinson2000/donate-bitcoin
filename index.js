@@ -23,4 +23,4 @@ if (qrcode == true){$('#qrcode').qrcode(url);}
 console.log(url);
 }
 
-function setCurrency(){document.getElementById("donatebutton").value = "Donate "+currency_code;}
+function setCurrency(){document.getElementById("donationbutton").src = 'https://img.shields.io/badge/donate-' + currency_code + '-brightgreen.svg?style=flat-square';}
