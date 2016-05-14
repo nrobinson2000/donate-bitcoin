@@ -21,3 +21,5 @@ var currency_code = "USD"; // Change to your preferred currency. Choose from htt
 var qrcode = false; // Set to true for qr code
 var link = true; // Set to false to disable generating hyperlink
 ```
+
+<center>[![](https://projecthandup.org/wp-content/uploads/2013/01/RibbonDonateBitcoin.png)](https://nrobinson2000.github.io/donate-bitcoin/)</center>
