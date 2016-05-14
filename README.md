@@ -8,11 +8,11 @@ A simple html plugin to allow people to donate the equivalent bitcoin amount of 
 
 Embed with:
 ```
-<iframe style="border:none;" src="donate-bitcoin/index.html" height="150px" width="400px"></iframe>
+<iframe style="border:none;" src="donate-bitcoin/index.html" height="160px" width="400px"></iframe>
 ```
 Or with qr code option:
 ```
-<iframe style="border:none;" src="donate-bitcoin/index.html" height="450px" width="400px"></iframe>
+<iframe style="border:none;" src="donate-bitcoin/index.html" height="460px" width="400px"></iframe>
 ```
 
 Configuration: (inside of index.js)
