@@ -25,9 +25,9 @@ if (params.address){address = params.address;}
 if (params.popup){popup = params.popup;}
 if (params.currency){currency_code = params.currency;}
 if (params.qrcode == "true"){qrcode = true};
-else if (params.qrcode == "false"){qrcode = false};
+if (params.qrcode == "false"){qrcode = false};
 if (params.link == "true"){link = true};
-else if (params.link == "false"){link = false};
+if (params.link == "false"){link = false};
 if (params.organization){organization = params.organization;}
 
 function httpGet(theUrl){var xmlHttp = new XMLHttpRequest();xmlHttp.open( "GET", theUrl, false );xmlHttp.send( null );return xmlHttp.responseText;}
