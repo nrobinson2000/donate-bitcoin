@@ -30,6 +30,11 @@ function turnName(data)
     {
     returnstring = returnstring + data[i];
     }
+
+    if (data[i] == "-")
+    {
+    returnstring = returnstring + " ";
+    }
   }
   return returnstring
 }
