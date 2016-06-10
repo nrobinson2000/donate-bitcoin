@@ -30,6 +30,6 @@ var organization = "Example"; // Change to your organization name
 * Link people to your donate-bitcoin page with a set amount and specific currency for them to donate.  This is done by adding something like `?amount=100&currency=USD` to your url.  [Example](https://nrobinson2000.github.io/donate-bitcoin/?amount=100&currency=USD)
 
 # Screenshot:
-<p style="center">
+<p align="center">
 <img src="http://i.imgur.com/ux15lhi.jpg" width="500px">
 </p>
