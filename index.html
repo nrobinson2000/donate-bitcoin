@@ -15,13 +15,25 @@
 
 <center>
 <br>
-<div>
+<div id="donatemessage"></div>
+<div id="donation">
   <input type="text" name="donatebox" id="donatebox" onchange="donate()">
   <br><br><img style="cursor:pointer" id="donationbutton" height="30px" onclick="donate()" src="">
 </div>
-<script>setCurrency();</script>
 <div id="donatetext"></div>
 <br>
 <div id="qrcode"></div>
 </center>
+
+<script>
+setCurrency();
+document.getElementById("donatemessage").innerHTML = "<h1>Donate Bitcoin to " + organization +"</h1>";
+
+if (params.amount)
+{
+  document.getElementById("donation").innerHTML = "";
+  donate();
+}
+</script>
+
 <html>
