@@ -18,7 +18,7 @@ var organization = "Example"; // Change to your organization name
 
 # Use:
 * Link people to your donate-bitcoin page to let them chose how much Bitcoin to donate.
-* Link people to your donate-bitcoin page with a set amount and specific currency for them to donate.  This is done by adding something like `?amount=100&currency=USD` to your url. [Example](https://nrobinson2000.github.io/donate-bitcoin/?amount=100&currency=USD)  Currency codes must be chosen from the [Bitcoin average API](https://api.bitcoinaverage.com/ticker/)
+* Link people to your donate-bitcoin page with a set amount and specific currency for them to donate.  This is done by adding something like `?amount=100&currency=USD` to your url. ([Example](https://nrobinson2000.github.io/donate-bitcoin/?amount=100&currency=USD))  Currency codes must be chosen from the [Bitcoin average API](https://api.bitcoinaverage.com/ticker/)
 
 # Screenshot:
 <p align="center">
