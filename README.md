@@ -53,10 +53,10 @@ A demo of donate-bitcoin being embedded can be found on my portfolio. [https://n
 You can set any of the variables for donate-bitcoin by setting the parameters in your URL, after the `/?`.  Different variables are separated with a `&`.  For example, to donate 10 Pounds Sterling to Satoshi Nakamoto, you would add `?amount=10&currency=GBP&name=Satoshi-Nakamoto`
 ### Variables that you can set:
 
-* **`amount`** - Set the amount of currency to donate
+* **`amount`** - Set the amount of currency to donate.
 * **`address`** - Set a Bitcoin address.
 * **`popup`** - Enable / Disable popup. (`true` or `false`)
-* **`currency`** - Set currency (Chose from the [Bitcoin average API](https://api.bitcoinaverage.com/ticker/))
-* **`qrcode`** - Enable / Disable QR code (`true` or `false`)
-* **`link`** - Enable / Disable Hyperlink (`true` or `false`)
-* **`name`** - Set your name ( "Donate Bitcoin to NAME") **Seperate words with `-` !**
+* **`currency`** - Set currency. (Chose from the [Bitcoin average API](https://api.bitcoinaverage.com/ticker/))
+* **`qrcode`** - Enable / Disable QR code. (`true` or `false`)
+* **`link`** - Enable / Disable Hyperlink. (`true` or `false`)
+* **`name`** - Set your name. ( "Donate Bitcoin to NAME") **Seperate words with `-` !**
