@@ -34,7 +34,7 @@ var organization = "Example"; // Change to your organization name
 <img src="http://i.imgur.com/ux15lhi.jpg" width="500px">
 </p>
 
-# Create a donation Button:
+# Create a donation button:
 To create a cool button like this, [![Donate Bitcoin](https://img.shields.io/badge/donate-$10-orange.svg)](https://nrobinson2000.github.io/donate-bitcoin/?amount=10&currency=USD), you can use the [shields.io](http://shields.io) API.
 
 #### Markdown:
