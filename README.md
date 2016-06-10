@@ -6,7 +6,7 @@ A simple html plugin to allow people to donate the equivalent bitcoin amount of 
 
 [Click here for a Demo](http://nrobinson2000.github.io/donate-bitcoin/)
 
-## Configuration: (inside of index.js)
+# Configuration: (inside of index.js)
 ```
 var address = "PUT_ADDRESS_HERE"; // The bitcoin address to receive donations. Change to yours
 var popup = false; // Set to true if you want a popup to pay bitcoin
