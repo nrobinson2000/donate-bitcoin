@@ -41,3 +41,8 @@ To create a cool button like this [![Donate Bitcoin](https://img.shields.io/badg
 ```
 [![Donate Bitcoin](https://img.shields.io/badge/donate-$10-orange.svg)](http://example.com/donate-bitcoin/?amount=10&currency=USD)
 ```
+
+#### HTML:
+```
+<a href="http://example.com/donate-bitcoin/?amount=10&currency=USD"><img src="https://img.shields.io/badge/donate-$10-orange.svg"></a>
+```
