@@ -22,7 +22,8 @@ console.log(params.amount);
 console.log(currency_code);
 
 if (params.address){address = params.address;}
-if (params.popup){popup = params.popup;}
+if (params.popup == "true"){popup = true};
+if (params.popup == "false"){popup = false};
 if (params.currency){currency_code = params.currency;}
 if (params.qrcode == "true"){qrcode = true};
 if (params.qrcode == "false"){qrcode = false};
