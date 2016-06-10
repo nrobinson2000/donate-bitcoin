@@ -6,16 +6,7 @@ A simple html plugin to allow people to donate the equivalent bitcoin amount of 
 
 [Click here for a Demo](http://nrobinson2000.github.io/donate-bitcoin/)
 
-Embed with:
-```
-<iframe style="border:none;" src="donate-bitcoin/index.html" height="160px" width="400px"></iframe>
-```
-Or with qr code option:
-```
-<iframe style="border:none;" src="donate-bitcoin/index.html" height="460px" width="400px"></iframe>
-```
-
-Configuration: (inside of index.js)
+## Configuration: (inside of index.js)
 ```
 var address = "PUT_ADDRESS_HERE"; // The bitcoin address to receive donations. Change to yours
 var popup = false; // Set to true if you want a popup to pay bitcoin
@@ -45,4 +36,13 @@ To create a cool button like this, [![Donate Bitcoin](https://img.shields.io/bad
 #### HTML:
 ```
 <a href="http://example.com/donate-bitcoin/?amount=10&currency=USD"><img src="https://img.shields.io/badge/donate-$10-orange.svg"></a>
+```
+
+# Embed:
+```
+<iframe style="border:none;" src="donate-bitcoin/index.html" height="200px" width="400px"></iframe>
+```
+Or with qr code option:
+```
+<iframe style="border:none;" src="donate-bitcoin/index.html" height="600px" width="400px"></iframe>
 ```
