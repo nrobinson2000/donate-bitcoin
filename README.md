@@ -51,7 +51,7 @@ A demo of donate-bitcoin being embedded can be found on my portfolio. [https://n
 
 
 # Advanced Configuration:
-You can set any of the variables for donate-bitcoin by setting the parameters in your URL, after the `/?`.  Different variables are separated with a `&`.  For example, to donate 10 Pounds Sterling to Satoshi Nakamoto, you would add:
+You can set any of the variables for donate-bitcoin by setting the parameters in your URL, after the `/`.  Different variables are separated with a `&`.  For example, to donate 10 Pounds Sterling to Satoshi Nakamoto, you would add:
 ```
 ?amount=10&currency=GBP&name=Satoshi-Nakamoto
 ```
