@@ -28,7 +28,7 @@ if (params.qrcode == "true"){qrcode = true};
 if (params.qrcode == "false"){qrcode = false};
 if (params.link == "true"){link = true};
 if (params.link == "false"){link = false};
-if (params.organization){organization = params.organization;}
+if (params.name){organization = params.name;}
 
 function httpGet(theUrl){var xmlHttp = new XMLHttpRequest();xmlHttp.open( "GET", theUrl, false );xmlHttp.send( null );return xmlHttp.responseText;}
 
