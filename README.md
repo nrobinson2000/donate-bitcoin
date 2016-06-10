@@ -6,16 +6,7 @@ A simple html plugin to allow people to donate the equivalent bitcoin amount of 
 
 [Click here for a Demo](http://nrobinson2000.github.io/donate-bitcoin/)
 
-Embed with:
-```
-<iframe style="border:none;" src="donate-bitcoin/index.html" height="160px" width="400px"></iframe>
-```
-Or with qr code option:
-```
-<iframe style="border:none;" src="donate-bitcoin/index.html" height="460px" width="400px"></iframe>
-```
-
-Configuration: (inside of index.js)
+## Configuration: (inside of index.js)
 ```
 var address = "PUT_ADDRESS_HERE"; // The bitcoin address to receive donations. Change to yours
 var popup = false; // Set to true if you want a popup to pay bitcoin
@@ -28,3 +19,31 @@ var organization = "Example"; // Change to your organization name
 # Uses:
 * Link people to your donate-bitcoin page to let them chose how much Bitcoin to donate.
 * Link people to your donate-bitcoin page with a set amount and specific currency for them to donate.  This is done by adding something like `?amount=100&currency=USD` to your url.  [Example](https://nrobinson2000.github.io/donate-bitcoin/?amount=100&currency=USD)
+
+# Screenshot:
+<p align="center">
+<img src="http://i.imgur.com/ux15lhi.jpg" width="500px">
+</p>
+
+# Create a donation button:
+To create a cool button like this, [![Donate Bitcoin](https://img.shields.io/badge/donate-$10-orange.svg)](https://nrobinson2000.github.io/donate-bitcoin/?amount=10&currency=USD), you can use the [shields.io](http://shields.io) API.
+
+#### Markdown:
+```
+[![Donate Bitcoin](https://img.shields.io/badge/donate-$10-orange.svg)](http://example.com/donate-bitcoin/?amount=10&currency=USD)
+```
+
+#### HTML:
+```
+<a href="http://example.com/donate-bitcoin/?amount=10&currency=USD"><img src="https://img.shields.io/badge/donate-$10-orange.svg"></a>
+```
+
+# Embed:
+You can use HTML to embed donate-bitcoin into one of your existing pages to add an option for people to donate right on your page.
+```
+<iframe style="border:none;" src="donate-bitcoin/index.html" height="600px" width="400px"></iframe>
+```
+Or with qr code option disabled:
+```
+<iframe style="border:none;" src="donate-bitcoin/index.html" height="200px" width="400px"></iframe>
+```
