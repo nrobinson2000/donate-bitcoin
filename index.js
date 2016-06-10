@@ -35,9 +35,9 @@ var bitcoin_price = obj.ask;
 var finalexchange = (currency_value / bitcoin_price).toFixed(5);
 var url = "bitcoin:"+ address +"?amount=" + finalexchange;
 if (link == true){document.getElementById("donatetext").innerHTML ="<br><a href='"+ url + "'> Please send " + finalexchange.toString() + " Bitcoin to " + address + "</a>";}
-if (popup == true){window.open(url);}
 if (qrcode == true){document.getElementById("qrcode").innerHTML = "";}
 if (qrcode == true){$('#qrcode').qrcode(url);}
+if (popup == true){window.open(url);}
 console.log(url);
 }
 
