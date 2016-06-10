@@ -25,4 +25,6 @@ var link = true; // Set to false to disable generating hyperlink
 var organization = "Example"; // Change to your organization name
 ```
 
-<center>[![](https://projecthandup.org/wp-content/uploads/2013/01/RibbonDonateBitcoin.png)](https://nrobinson2000.github.io/donate-bitcoin/)</center>
+# Uses:
+* Link people to your donate-bitcoin page to let them chose how much Bitcoin to donate.
+* Link people to your donate-bitcoin page with a set amount and specific currency for them to donate.  This is done by adding something like `?amount=100&currency=USD` to your url.  [Example](https://nrobinson2000.github.io/donate-bitcoin/?amount=100&currency=USD)
