@@ -59,4 +59,4 @@ You can set any of the variables for donate-bitcoin by setting the parameters in
 * **`currency`** - Set currency (Chose from the [Bitcoin average API](https://api.bitcoinaverage.com/ticker/))
 * **`qrcode`** - Enable / Disable QR code (`true` or `false`)
 * **`link`** - Enable / Disable Hyperlink (`true` or `false`)
-* **`name`** - Set your name ( "Donate Bitcoin to YOUR_NAME")
+* **`name`** - Set your name ( "Donate Bitcoin to NAME")
