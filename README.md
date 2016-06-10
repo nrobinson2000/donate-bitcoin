@@ -18,8 +18,7 @@ var organization = "Example"; // Change to your organization name
 
 # Use:
 * Link people to your donate-bitcoin page to let them chose how much Bitcoin to donate.
-* Link people to your donate-bitcoin page with a set amount and specific currency for them to donate.  This is done by adding something like `?amount=100&currency=USD` to your url. ([Example](https://nrobinson2000.github.io/donate-bitcoin/?amount=100&currency=USD))  Currency codes must be chosen from the [Bitcoin average API](https://api.bitcoinaverage.com/ticker/)
-
+* Link people to your donate-bitcoin page with a set amount and specific currency for them to donate.  This is done by adding something like `?amount=100&currency=USD` to your url. ([Example](https://nrobinson2000.github.io/donate-bitcoin/?amount=100&currency=USD))  Read more in the [Advanced Configuration](https://github.com/nrobinson2000/donate-bitcoin#advanced-configuration)
 # Screenshot:
 <p align="center">
 <img src="http://i.imgur.com/ux15lhi.jpg" width="500px">
@@ -43,9 +42,21 @@ You can use HTML to embed donate-bitcoin into one of your existing pages to add 
 ```
 <iframe style="border:none;" src="donate-bitcoin/index.html" height="600px" width="400px"></iframe>
 ```
-Or with qr code option disabled:
+Or with QR code option disabled:
 ```
 <iframe style="border:none;" src="donate-bitcoin/index.html" height="200px" width="400px"></iframe>
 ```
 
 A demo of donate-bitcoin being embedded can be found on my portfolio. [https://nrobinson2000.github.io/about/](https://nrobinson2000.github.io/about/)
+
+# Advanced Configuration:
+You can set any of the variables for donate-bitcoin by setting the parameters in your URL, after the `/?`.  Different variables are separated with a `&`.  For example, to donate 10 Pounds Sterling to Satoshi Nakamoto, you would add `?amount=10&currency=GBP&name=Satoshi-Nakamoto`
+### Variables that you can set:
+
+* **`amount`** - Set the amount of currency to donate
+* **`address`** - Set a Bitcoin address.
+* **`popup`** - Enable / Disable popup. (`true` or `false`)
+* **`currency`** - Set currency (Chose from the [Bitcoin average API](https://api.bitcoinaverage.com/ticker/))
+* **`qrcode`** - Enable / Disable QR code (`true` or `false`)
+* **`link`** - Enable / Disable Hyperlink (`true` or `false`)
+* **`name`** - Set your name ( "Donate Bitcoin to NAME") **Seperate words with `-` !**
