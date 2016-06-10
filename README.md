@@ -19,9 +19,10 @@ Configuration: (inside of index.js)
 ```
 var address = "PUT_ADDRESS_HERE"; // The bitcoin address to receive donations. Change to yours
 var popup = false; // Set to true if you want a popup to pay bitcoin
-var currency_code = "USD"; // Change to your preferred currency. Choose from https://api.bitcoinaverage.com/ticker/
-var qrcode = false; // Set to true for qr code
+var currency_code = "USD"; // Change to your default currency. Choose from https://api.bitcoinaverage.com/ticker/
+var qrcode = true; // Set to false to disable qrcode
 var link = true; // Set to false to disable generating hyperlink
+var organization = "Example"; // Change to your organization name
 ```
 
 <center>[![](https://projecthandup.org/wp-content/uploads/2013/01/RibbonDonateBitcoin.png)](https://nrobinson2000.github.io/donate-bitcoin/)</center>
