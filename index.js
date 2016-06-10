@@ -28,6 +28,7 @@ function donate()
 {
 if (params.amount) {var currency_value = params.amount;}
 else {var currency_value = parseFloat(document.getElementById("donatebox").value);}
+if (currency_value == ""){currency_value = 0;}
 var json = httpGet("https://api.bitcoinaverage.com/ticker/"+currency_code+"/");  // Get bitcoin price
 var obj = JSON.parse(json);
 var bitcoin_price = obj.ask;
