@@ -21,6 +21,16 @@ if (location.search) {
 console.log(params.amount);
 console.log(currency_code);
 
+function turnName(data)
+{
+  var returnstring = "";
+  for (i = 0; i < data.length; i++)
+  {
+    returnstring = returnstring + data[i];
+  }
+  return returnstring
+}
+
 if (params.address){address = params.address;}
 if (params.popup == "true"){popup = true};
 if (params.popup == "false"){popup = false};
@@ -29,7 +39,7 @@ if (params.qrcode == "true"){qrcode = true};
 if (params.qrcode == "false"){qrcode = false};
 if (params.link == "true"){link = true};
 if (params.link == "false"){link = false};
-if (params.name){organization = params.name;}
+if (params.name){organization = turnName(params.name);}
 
 function httpGet(theUrl){var xmlHttp = new XMLHttpRequest();xmlHttp.open( "GET", theUrl, false );xmlHttp.send( null );return xmlHttp.responseText;}
 
