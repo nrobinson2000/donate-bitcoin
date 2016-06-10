@@ -26,7 +26,10 @@ function turnName(data)
   var returnstring = "";
   for (i = 0; i < data.length; i++)
   {
+    if (data[i] != "-")
+    {
     returnstring = returnstring + data[i];
+    }
   }
   return returnstring
 }
