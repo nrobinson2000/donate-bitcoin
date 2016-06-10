@@ -27,7 +27,7 @@ function httpGet(theUrl){var xmlHttp = new XMLHttpRequest();xmlHttp.open( "GET",
 function donate()
 {
 if (params.amount) {var currency_value = params.amount;}
-else {var currency_value = parseInt(document.getElementById("donatebox").value);}
+else {var currency_value = parseFloat(document.getElementById("donatebox").value);}
 var json = httpGet("https://api.bitcoinaverage.com/ticker/"+currency_code+"/");  // Get bitcoin price
 var obj = JSON.parse(json);
 var bitcoin_price = obj.ask;
