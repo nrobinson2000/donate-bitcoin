@@ -49,7 +49,6 @@ Or with QR code option disabled:
 
 A demo of donate-bitcoin being embedded can be found on my portfolio. [https://nrobinson2000.github.io/about/](https://nrobinson2000.github.io/about/)
 
-
 # Advanced Configuration:
 You can set any of the variables for donate-bitcoin by setting the parameters in your URL, after the `/`.  Different variables are separated with a `&`.  For example, to donate 10 Pounds Sterling to Satoshi Nakamoto, you would add:
 ```
