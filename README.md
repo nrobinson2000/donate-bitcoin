@@ -31,5 +31,5 @@ var organization = "Example"; // Change to your organization name
 
 # Screenshot:
 <p style="center">
-<img src="http://i.imgur.com/ux15lhi.jpg">
+<img src="http://i.imgur.com/ux15lhi.jpg" width="500px">
 </p>
