@@ -54,7 +54,7 @@ You can override any of the variables for donate-bitcoin by adding the parameter
 ```
 /?amount=10&currency=GBP&name=Satoshi-Nakamoto
 ```
-to your URL.  [See this example in Action.](https://nrobinson2000.github.io/donate-bitcoin/?amount=10&currency=GBP&name=Satoshi-Nakamoto)
+to your URL.  [See this example in action.](https://nrobinson2000.github.io/donate-bitcoin/?amount=10&currency=GBP&name=Satoshi-Nakamoto)
 
 ### Variables that you can set:
 
