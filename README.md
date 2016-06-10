@@ -39,10 +39,11 @@ To create a cool button like this, [![Donate Bitcoin](https://img.shields.io/bad
 ```
 
 # Embed:
-```
-<iframe style="border:none;" src="donate-bitcoin/index.html" height="200px" width="400px"></iframe>
-```
-Or with qr code option:
+You can use HTML to embed donate-bitcoin into one of your existing pages to add an option for people to donate right on your page.
 ```
 <iframe style="border:none;" src="donate-bitcoin/index.html" height="600px" width="400px"></iframe>
+```
+Or with qr code option disabled:
+```
+<iframe style="border:none;" src="donate-bitcoin/index.html" height="200px" width="400px"></iframe>
 ```
