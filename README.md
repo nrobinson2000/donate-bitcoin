@@ -65,4 +65,4 @@ to your URL.  [See this example in action.](https://nrobinson2000.github.io/dona
 * **`currency`** - Set currency. (Chose from the [Bitcoin average API](https://api.bitcoinaverage.com/ticker/))
 * **`qrcode`** - Enable / Disable QR code. (`true` or `false`)
 * **`link`** - Enable / Disable Hyperlink. (`true` or `false`)
-* **`name`** - Set your name. ( "Donate Bitcoin to NAME") **Seperate words with `-` !**
+* **`name`** - Set your name. ( "Donate Bitcoin to NAME") **Separate words with `-` !**
