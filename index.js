@@ -39,24 +39,6 @@ function turnName(data)
   return returnstring
 }
 
-function turnHtml(data)
-{
-  var returnstring = "";
-  for (i = 0; i < data.length; i++)
-  {
-    if (data[i] != " ")
-    {
-    returnstring = returnstring + data[i];
-    }
-
-    if (data[i] == " ")
-    {
-    returnstring = returnstring + "%20";
-    }
-  }
-  return returnstring
-}
-
 if (params.address){address = params.address;}
 if (params.popup == "true"){popup = true};
 if (params.popup == "false"){popup = false};
@@ -78,7 +60,7 @@ var json = httpGet("https://api.bitcoinaverage.com/ticker/"+currency_code+"/"); 
 var obj = JSON.parse(json);
 var bitcoin_price = obj.ask;
 var finalexchange = (currency_value / bitcoin_price).toFixed(5);
-var url = "bitcoin:"+ address +"?amount=" + finalexchange + "?label=" + turnHtml(organization);
+var url = "bitcoin:"+ address +"?amount=" + finalexchange;
 if (link == true){document.getElementById("donatetext").innerHTML ="<br><a href='"+ url + "'> Please send " + finalexchange.toString() + " Bitcoin to " + address + "</a>";}
 if (qrcode == true){document.getElementById("qrcode").innerHTML = "";}
 if (qrcode == true){$('#qrcode').qrcode(url);}
