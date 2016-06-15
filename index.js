@@ -6,6 +6,8 @@ var currency_code = "USD"; // Change to your default currency. Choose from https
 var qrcode = true; // Set to false to disable qrcode
 var link = true; // Set to false to disable generating hyperlink
 var organization = "Example"; // Change to your organization name
+var mbits = true; // Set to false to display bitcoin traditionally
+
 
 var params = {};
 
@@ -49,6 +51,9 @@ if (params.link == "true"){link = true};
 if (params.link == "false"){link = false};
 if (params.name){organization = turnName(params.name);}
 
+if (params.mbits == "true"){mbits = true};
+if (params.mbits == "false"){mbits = false};
+
 
 function httpGet(theUrl){var xmlHttp = new XMLHttpRequest();xmlHttp.open( "GET", theUrl, false );xmlHttp.send( null );return xmlHttp.responseText;}
 
@@ -62,7 +67,9 @@ var obj = JSON.parse(json);
 var bitcoin_price = obj.ask;
 var finalexchange = (currency_value / bitcoin_price).toFixed(5);
 var url = "bitcoin:"+ address +"?amount=" + finalexchange;
-if (link == true){document.getElementById("donatetext").innerHTML ="<br><a href='"+ url + "'> Please send " + finalexchange.toString() + " Bitcoin to " + address + "</a>";}
+if (mbits == true){var mbitprice = (finalexchange * 1000).toFixed(2); var donatedisplay = mbitprice.toString() + " mBits to ";}
+if (mbits == false){var donatedisplay = finalexchange.toString() + " Bitcoin to ";}
+if (link == true){document.getElementById("donatetext").innerHTML ="<br><a href='"+ url + "'> Please send " + donatedisplay + address + "</a>";}
 if (qrcode == true){document.getElementById("qrcode").innerHTML = "";}
 if (qrcode == true){$('#qrcode').qrcode(url);}
 if (popup == true){window.open(url);}

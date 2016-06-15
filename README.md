@@ -66,3 +66,4 @@ to your URL.  [See this example in action.](https://nrobinson2000.github.io/dona
 * **`qrcode`** - Enable / Disable QR code. (`true` or `false`)
 * **`link`** - Enable / Disable Hyperlink. (`true` or `false`)
 * **`name`** - Set your name. ( "Donate Bitcoin to NAME") **Separate words with `-` !**
+* **`mbits`** - Display bitcoin donation in mBits. (Milli-Bitcoins) (`true` or `false`)
