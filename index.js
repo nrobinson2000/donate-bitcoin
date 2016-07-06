@@ -6,7 +6,6 @@ var currency_code = "USD"; // Change to your default currency. Choose from https
 var qrcode = true; // Set to false to disable qrcode
 var link = true; // Set to false to disable generating hyperlink
 var organization = "Example"; // Change to your organization name
-var mbits = true; // Set to false to display bitcoin traditionally
 
 
 var params = {};
