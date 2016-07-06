@@ -73,4 +73,7 @@ to your URL.  [See this example in action.](https://nrobinson2000.github.io/dona
 I have installed `donate-bitcoin` on my [po-util website](https;//po-util.com), at [`https://po-util.com/donate`](https://po-util.com/donate)
 
 Here is what it looks like on an iPhone 6 Plus:
+
+<p align="center">
 <img src="iphone-screenshot.png" width="500px">
+</p>
