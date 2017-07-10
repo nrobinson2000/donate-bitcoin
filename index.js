@@ -7,7 +7,7 @@ var qrcode = true; // Set to false to disable qrcode
 var link = true; // Set to false to disable generating hyperlink
 var organization = "Nathan Robinson"; // Change to your organization name
 var mbits = true; // Set to false to display bitcoin traditionally
-
+var json;
 
 var params = {};
 
@@ -57,14 +57,19 @@ if (params.mbits == "false"){mbits = false};
 
 function httpGet(theUrl){var xmlHttp = new XMLHttpRequest();xmlHttp.open( "GET", theUrl, false );xmlHttp.send( null );return xmlHttp.responseText;}
 
+function getPrice()
+{
+  json = httpGet("https://blockchain.info/ticker?cors=true");  // Get bitcoin price
+}
+
 function donate()
 {
 if (params.amount) {var currency_value = params.amount;}
 else {var currency_value = parseFloat(document.getElementById("donatebox").value);}
 if (isNaN(currency_value) == true){currency_value = 0;}
-var json = httpGet("https://api.bitcoinaverage.com/ticker/"+currency_code+"/");  // Get bitcoin price
+// var json = httpGet("https://api.bitcoinaverage.com/ticker/"+currency_code+"/");  // Get bitcoin price
 var obj = JSON.parse(json);
-var bitcoin_price = obj.ask;
+var bitcoin_price = obj.USD.buy;
 var finalexchange = (currency_value / bitcoin_price).toFixed(5);
 var url = "bitcoin:"+ address +"?amount=" + finalexchange;
 if (mbits == true){var mbitprice = (finalexchange * 1000).toFixed(2); var donatedisplay = mbitprice.toString() + " mBits to ";}
