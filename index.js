@@ -44,12 +44,12 @@ if (params.address){address = params.address;}
 if (params.popup == "true"){popup = true};
 if (params.popup == "false"){popup = false};
 if (params.currency){currencyCode = params.currency.toUpperCase();}
-
 if (params.qrcode == "true"){qrcode = true};
 if (params.qrcode == "false"){qrcode = false};
 if (params.link == "true"){link = true};
 if (params.link == "false"){link = false};
 if (params.name){organization = turnName(params.name);}
+if (params.amount){defaultAmountToDonate = params.amount;}
 
 if (params.mbits == "true"){mbits = true};
 if (params.mbits == "false"){mbits = false};
