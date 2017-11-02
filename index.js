@@ -2,7 +2,7 @@
 
 var address = "15EQPm5BFGbxkqjqAoZKhapwShTtzap9aj"; // The bitcoin address to receive donations. Change to yours
 var popup = false; // Set to true if you want a popup to pay bitcoin
-var currencyCode = "USD"; // Change to your default currency. Choose from https://api.bitcoinaverage.com/ticker/
+var currencyCode = "USD"; // Change to your default currency. Choose from https://blockchain.info/ticker?cors=true
 var qrcode = true; // Set to false to disable qrcode
 var link = true; // Set to false to disable generating hyperlink
 var organization = "Nathan Robinson"; // Change to your organization name
