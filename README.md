@@ -14,6 +14,8 @@ var currency_code = "USD"; // Change to your default currency. Choose from https
 var qrcode = true; // Set to false to disable qrcode
 var link = true; // Set to false to disable generating hyperlink
 var organization = "Example"; // Change to your organization name
+var mbits = true; // Set to false to display bitcoin traditionally
+
 ```
 
 # Use:
@@ -67,3 +69,13 @@ to your URL.  [See this example in action.](https://nrobinson2000.github.io/dona
 * **`link`** - Enable / Disable Hyperlink. (`true` or `false`)
 * **`name`** - Set your name. ( "Donate Bitcoin to NAME") **Separate words with `-` !**
 * **`mbits`** - Display bitcoin donation in mBits. (Milli-Bitcoins) (`true` or `false`)
+
+# Custom Examples of `donate-bitcoin`:
+I have installed `donate-bitcoin` on my [po-util website](https://po-util.com), at [`https://po-util.com/donate`](https://po-util.com/donate)
+
+Here is what it looks like on an iPhone 6 Plus:
+
+<p align="center">
+<img src="iphone-screenshot.png" width="500px">
+</p>
+

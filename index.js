@@ -2,12 +2,14 @@
 
 var address = "15EQPm5BFGbxkqjqAoZKhapwShTtzap9aj"; // The bitcoin address to receive donations. Change to yours
 var popup = false; // Set to true if you want a popup to pay bitcoin
-var currency_code = "USD"; // Change to your default currency. Choose from https://api.bitcoinaverage.com/ticker/
+var currencyCode = "USD"; // Change to your default currency. Choose from https://api.bitcoinaverage.com/ticker/
 var qrcode = true; // Set to false to disable qrcode
 var link = true; // Set to false to disable generating hyperlink
 var organization = "Nathan Robinson"; // Change to your organization name
 var mbits = true; // Set to false to display bitcoin traditionally
-var json;
+var defaultAmountToDonate = 5; // Default amount to donate
+var defaultCurrency = 'USD'; // Default currency to fallback
+var showDefaultCurrencyDisclaimer = true; // If the requested cuurency is not available show a warning
 
 var params = {};
 
@@ -19,9 +21,6 @@ if (location.search) {
         params[nv[0]] = nv[1] || true;
     }
 }
-
-console.log(params.amount);
-console.log(currency_code);
 
 function turnName(data)
 {
@@ -44,7 +43,8 @@ function turnName(data)
 if (params.address){address = params.address;}
 if (params.popup == "true"){popup = true};
 if (params.popup == "false"){popup = false};
-if (params.currency){currency_code = params.currency;}
+if (params.currency){currencyCode = params.currency.toUpperCase();}
+
 if (params.qrcode == "true"){qrcode = true};
 if (params.qrcode == "false"){qrcode = false};
 if (params.link == "true"){link = true};
@@ -55,33 +55,85 @@ if (params.mbits == "true"){mbits = true};
 if (params.mbits == "false"){mbits = false};
 
 
-function httpGet(theUrl){var xmlHttp = new XMLHttpRequest();xmlHttp.open( "GET", theUrl, false );xmlHttp.send( null );return xmlHttp.responseText;}
-
-function getPrice()
-{
-  json = httpGet("https://blockchain.info/ticker?cors=true");  // Get bitcoin price
+function getBitcoinPrice(currencyExchangeResponse) {
+    try {
+        return currencyExchangeResponse[currencyCode]['buy'];
+    } catch (err) {
+        handlePricingError(currencyExchangeResponse);
+        return currencyExchangeResponse[currencyCode]['buy'];
+    }
 }
 
-function donate()
-{
-if (params.amount) {var currency_value = params.amount;}
-else {var currency_value = parseFloat(document.getElementById("donatebox").value);}
-if (isNaN(currency_value) == true){currency_value = 0;}
-// var json = httpGet("https://api.bitcoinaverage.com/ticker/"+currency_code+"/");  // Get bitcoin price
-var obj = JSON.parse(json);
-var bitcoin_price = obj.USD.buy;
-var finalexchange = (currency_value / bitcoin_price).toFixed(5);
-var url = "bitcoin:"+ address +"?amount=" + finalexchange;
-if (mbits == true){var mbitprice = (finalexchange * 1000).toFixed(2); var donatedisplay = mbitprice.toString() + " mBits to ";}
-if (mbits == false){var donatedisplay = finalexchange.toString() + " Bitcoin to ";}
-if (link == true){document.getElementById("donatetext").innerHTML ="<br><a href='"+ url + "'> Please send " + donatedisplay + address + "</a>";}
-if (qrcode == true){document.getElementById("qrcode").innerHTML = "";}
-if (qrcode == true){$('#qrcode').qrcode(url);}
-if (popup == true){window.open(url);}
-console.log(url);
+function drawCurrencyButton() {
+  document.getElementById("donationbutton").src = 'https://img.shields.io/badge/donate-' + currencyCode + '-brightgreen.svg?style=flat-square';
 }
 
-function setCurrency(){document.getElementById("donationbutton").src = 'https://img.shields.io/badge/donate-' + currency_code + '-brightgreen.svg?style=flat-square';}
+function drawDonationElements(url, donateDisplayMessage) {
+    drawCurrencyButton();
+    if (qrcode == true) {
+        document.getElementById("qrcodePlaceHolder").innerHTML = "";
+        $('#qrcodePlaceHolder').qrcode(url);
+    }
+    if (link == true) {
+        document.getElementById("donatetext").innerHTML = "<br><a href='" + url + "'>" + donateDisplayMessage + "</a>";
+    }
+}
+
+function donate() {
+  $.getJSON("https://blockchain.info/ticker?cors=true", function(currencyExchangeResponse) {
+      var fiatDonationAmount = getFiatDonationAmount();
+      var bitcoinPrice = getBitcoinPrice(currencyExchangeResponse);
+      var bitcoinAmountToDonate = computeBitcoinAmount(fiatDonationAmount, bitcoinPrice);
+      var donationElements = composeDonationElements(bitcoinAmountToDonate, fiatDonationAmount);
+      drawDonationElements(donationElements.url, donationElements.message);
+  });
+}
+
+function handlePricingError(currencyExchangeResponse) {
+  if (showDefaultCurrencyDisclaimer){
+    var disclaimer = `Could not find the requested currency, will be using ${defaultCurrency} instead`;
+    alert(disclaimer);
+  }
+    currencyCode = defaultCurrency.toUpperCase();
+}
+
+function computeBitcoinAmount(fiatDonationAmount, bitcoin_price) {
+    var bitcoinAmountToDonate = (fiatDonationAmount / bitcoin_price).toFixed(5);
+    return bitcoinAmountToDonate;
+}
+
+function noValidInput(fiatUserInput) {
+    return isNaN(fiatUserInput) == true;
+}
+
+function validAmountRequestedInUrl() {
+    return isNaN(params.amount) == false
+}
+
+function getFiatDonationAmount() {
+    // if user sets an amount, we will use it
+    var fiatUserInput = parseFloat(document.getElementById("donatebox").value);
+    if (noValidInput(fiatUserInput) && !validAmountRequestedInUrl()) {
+        return defaultAmountToDonate;
+    } else if (noValidInput(fiatUserInput) && validAmountRequestedInUrl()) {
+        return params.amount;
+    }
+    return fiatUserInput;
+}
+
+function composeDonationElements(bitcoinAmountToDonate, fiatDonationAmount) {
+    var url = "bitcoin:" + address + "?amount=" + bitcoinAmountToDonate;
+    var fiatAmountToDonateMessage = " (" + fiatDonationAmount + " " + currencyCode + ") " + "to " + address;
+    var donateDisplayMessage = " Please send " + bitcoinAmountToDonate.toString() + " Bitcoin" + fiatAmountToDonateMessage;
+    if (mbits == true) {
+        var mbitprice = (bitcoinAmountToDonate * 1000).toFixed(2);
+        var donateDisplayMessage = " Please send " + mbitprice.toString() + " mBits" + fiatAmountToDonateMessage;
+    }
+    return {
+        url: url,
+        message: donateDisplayMessage
+    };
+}
 
 $(document).keyup(function (e) {
     if ($(".input1:focus") && (e.keyCode === 13)) {
