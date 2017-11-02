@@ -15,6 +15,7 @@ var qrcode = true; // Set to false to disable qrcode
 var link = true; // Set to false to disable generating hyperlink
 var organization = "Example"; // Change to your organization name
 var mbits = true; // Set to false to display bitcoin traditionally
+
 ```
 
 # Use:
@@ -77,3 +78,4 @@ Here is what it looks like on an iPhone 6 Plus:
 <p align="center">
 <img src="iphone-screenshot.png" width="500px">
 </p>
+
