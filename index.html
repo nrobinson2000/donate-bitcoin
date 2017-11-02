@@ -13,7 +13,7 @@
 <script src="js/jquery.js"></script>
 <script src="js/jquery.qrcode.min.js"></script>
 <script src="index.js"></script>
-<body onload="getPrice()">
+<body onload="donate()">
 <center>
 <br>
 <div id="donatemessage"></div>
@@ -23,11 +23,10 @@
 </div>
 <div id="donatetext"></div>
 <br>
-<div id="qrcode"></div>
+<div id="qrcodePlaceHolder"></div>
 </center>
 
 <script>
-setCurrency();
 document.getElementById("donatemessage").innerHTML = "<h1>Donate Bitcoin to " + organization +"</h1>";
 
 if (params.amount)
