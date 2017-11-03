@@ -27,6 +27,12 @@
 
 <script>
 document.getElementById("donatemessage").innerHTML = "<h1>Donate Bitcoin to " + organization +"</h1>";
+
+if (!isNaN(parseFloat(params.amount)))
+{
+  document.getElementById("donatebox").value = parseFloat(params.amount);
+}
+
 </script>
 </body>
 <html>

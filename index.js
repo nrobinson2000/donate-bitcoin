@@ -49,7 +49,6 @@ if (params.qrcode == "false"){qrcode = false};
 if (params.link == "true"){link = true};
 if (params.link == "false"){link = false};
 if (params.name){organization = turnName(params.name);}
-if (params.amount){defaultAmountToDonate = params.amount;}
 
 if (params.mbits == "true"){mbits = true};
 if (params.mbits == "false"){mbits = false};
@@ -98,7 +97,7 @@ function handlePricingError(currencyExchangeResponse) {
 }
 
 function computeBitcoinAmount(fiatDonationAmount, bitcoin_price) {
-    var bitcoinAmountToDonate = (fiatDonationAmount / bitcoin_price).toFixed(5);
+    var bitcoinAmountToDonate = (fiatDonationAmount / bitcoin_price).toFixed(8);
     return bitcoinAmountToDonate;
 }
 
