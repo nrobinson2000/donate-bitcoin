@@ -67,7 +67,7 @@ to your URL.  [See this example in action.](https://nrobinson2000.github.io/dona
 * **`currency`** - Set currency. (Chose from the [Bitcoin average API](https://api.bitcoinaverage.com/ticker/))
 * **`qrcode`** - Enable / Disable QR code. (`true` or `false`)
 * **`link`** - Enable / Disable Hyperlink. (`true` or `false`)
-* **`name`** - Set your name. ( "Donate Bitcoin to NAME") **Separate words with `-` !**
+* **`name`** - Set your name. ( "Donate Bitcoin to NAME") **Separate words with `-`, use `--` for a `-` !**
 * **`mbits`** - Display bitcoin donation in mBits. (Milli-Bitcoins) (`true` or `false`)
 
 # Custom Examples of `donate-bitcoin`:
@@ -78,4 +78,3 @@ Here is what it looks like on an iPhone 6 Plus:
 <p align="center">
 <img src="iphone-screenshot.png" width="500px">
 </p>
-
