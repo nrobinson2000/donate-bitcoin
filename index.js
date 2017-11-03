@@ -24,17 +24,25 @@ if (location.search) {
 
 function turnName(data)
 {
+  var ignoreHyphen = false;
   var returnstring = "";
   for (i = 0; i < data.length; i++)
   {
-    if (data[i] != "-")
+    if (data[i] != "-" )
     {
     returnstring = returnstring + data[i];
     }
 
-    if (data[i] == "-")
+    if (data[i] == "-" && data[i+1] == "-")
+    {
+      returnstring = returnstring + "-";
+      ignoreHyphen = true
+    }
+
+    if (data[i] == "-" && ignoreHyphen == false)
     {
     returnstring = returnstring + " ";
+    ignoreHyphen = false;
     }
   }
   return returnstring
